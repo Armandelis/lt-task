@@ -9,8 +9,9 @@ First Time Setup:
 2. Run `docker compose up`in the project root, keep it running in a seperate window.
 3. You need to enter the 'laravel' container by using the command `docker exec -ti lt-task-laravel-1 bash` ( the name of the container may be slightly different ) while being in project root. While inside run `composer install`.
 4. Focus on the open window with the  `docker compose up` running and shut it down with the ctrl + C key combination.
-5. Run `./vendor/bin/sail up`in the project root.
-6. Once again you need to enter the 'laravel' container as in the 3rd step. While inside run `php artisan migrate`.
+5. Run `./vendor/bin/sail down --rmi all -v` in the project root.
+6. Run `./vendor/bin/sail up` in the project root.
+7. Once again you need to enter the 'laravel' container as in the 3rd step. While inside run `php artisan migrate`.
 
 Routes:
 1. Route http://localhost/api/numberStack/push
@@ -26,7 +27,7 @@ Routes:
 	Use: For number retrieving which will be translated in english
 
 	Method: GET
-	
+
 	Parameters: None
 
 All responses come with valid http status codes and bodies are in json format.
