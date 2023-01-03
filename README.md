@@ -14,13 +14,19 @@ First Time Setup:
 
 Routes:
 1. Route http://localhost/api/numberStack/push
+
 	Use: For inserting numbers into the stack
+
 	Method: POST
+
 	Parameters: 'number'
 
 2. Route http://localhost/api/numberStack/pop
+
 	Use: For number retrieving which will be translated in english
+
 	Method: GET
+	
 	Parameters: None
 
 All responses come with valid http status codes and bodies are in json format.
