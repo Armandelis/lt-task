@@ -5,9 +5,12 @@ PreRequisites:
 
 
 First Time Setup:
-1. Run `/vendor/bin/sail up`in the project root.
-2. After containers are built and mounted, you might need to run `php artisan migrate` inside 'lt-task-laravel-1' container ( the name may be slightly different ). You can enter the container by using the command `docker exec -ti lt-task-laravel-1 bash` while being in project root.
-
+1. Run `docker compose up`in the project root, keep it running in a seperate window.
+2. Copy '.env.example' as '.env'.
+3. You need to enter the 'laravel' container by using the command `docker exec -ti lt-task-laravel-1 bash` ( the name of the container may be slightly different ) while being in project root. While inside run `composer install`.
+4. Focus on the open window with the  `docker compose up` running and shut it down with the ctrl + C key combination.
+5. Run `./vendor/bin/sail up`in the project root.
+6. Once again you need to enter the 'laravel' container as in the 3rd step. While inside run `php artisan migrate`.
 
 Routes:
 1. Route http://localhost/api/numberStack/push
@@ -23,4 +26,5 @@ Routes:
 All responses come with valid http status codes and bodies are in json format.
 
 Built on laravel 9.45
+
 Package 'kwn/number-to-words' is used to translate numbers to their english representations.
